@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/product/filter', 'ProductController@filterProduct')->name('product.filter');
 
 Route::middleware('auth')->group(function () {
     Route::resource('product-variant', 'VariantController');
